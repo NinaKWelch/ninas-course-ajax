@@ -44,7 +44,7 @@
 		};
 
 		// call the open method to get an article that relates to the search term
-		articleRequest.open('GET', `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedForText}&api-key=68bec75cdab74728b85e1e916a9ba0c5`);
+		articleRequest.open('GET', `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedForText}&api-key=68bec75cdab74728b85e1e916a9ba0c5`);
 
 		// send the request (must have an onload method to handle the suuceesful response)
 		articleRequest.send();
@@ -57,7 +57,7 @@
 
 			if (data && data.results && data.results[0]) {
 			    const firstImage = data.results[0];
-			    htmlContent = '<figure><img src="${firstImage.urls.regular}" alt="${searchedForTextOrText}"><figcaption>${searchedForText} by ${firstImage.user.name}</figcaption></figure>';
+			    htmlContent = '<figure><img src="${firstImage.urls.regular}" alt="${searchedForText}"><figcaption>${searchedForText} by ${firstImage.user.name}</figcaption></figure>';
 			} else {
 				htmlContent = '<div class="error-no-image">No images available</div>'
 			}
