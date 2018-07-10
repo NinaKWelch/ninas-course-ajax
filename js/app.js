@@ -12,6 +12,7 @@
         searchedForText = searchField.value;
     });
 
+
     // instialize the XMLHttpRequest (must be called before any other method calls)
 	const unsplashRequest = new XMLHttpRequest();
 
